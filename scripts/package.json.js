@@ -32,7 +32,24 @@ const packageConfig = {
     },
 
     devDependencies: {
-        // 
+        'webpack-2b': '^2.0.2',
+        'gulp': '~3.9.1',
+        'del': '^3.0.0',
+
+        // typescript 依赖的包
+        'typescript': '^2.5.3',
+        'ts-loader': '^3.0.3',
+
+        // less 编译依赖的包（css）
+        'less': '^3.0.0-alpha.3',
+        'style-loader': '^0.19.0',
+        'css-loader': '^0.28.7',
+        'less-loader': '^4.0.5',
+        'less-plugin-autoprefix': '^1.5.1',
+        'extract-text-webpack-plugin': '^3.0.1',
+
+        // 其他loader（json、image）
+        'json-loader': '^0.5.7'
     }
 };
 
