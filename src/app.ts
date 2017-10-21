@@ -5,7 +5,7 @@
  * @date 17/10/20
  */
 import * as _ from 'lodash';
-import { auto } from 'async';
+import * as async from 'async';
 import { say } from './utils';
 
 const deviceType: string = say('deviceType');
@@ -16,7 +16,7 @@ const arr: string[] = [
 console.log(deviceType);
 _.forEach(arr, (str: string) => console.log(str));
 
-auto({
+async.auto({
     delay: (callback) => {
         setTimeout(() => {
             console.log('----- delay ----');
