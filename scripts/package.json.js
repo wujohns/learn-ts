@@ -27,8 +27,12 @@ const packageConfig = {
         '@types/node': '^8.0.46',
         '@types/lodash': '^4.14.78',
         '@types/async': '^2.0.44',
+        '@types/react': '^16.0.18',
+        '@types/react-dom': '^16.0.2',
         'lodash': '^4.17.4',
-        'async': '^2.5.0'
+        'async': '^2.5.0',
+        'react': '^16.0.0',
+        'react-dom': '^16.0.0'
     },
 
     devDependencies: {

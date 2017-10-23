@@ -8,11 +8,12 @@ const tsConfig = {
         'target': 'es5',
         'outDir': 'dist',
         'module': 'commonjs',
-        'moduleResolution': 'node',
+        'jsx': 'react',
+        'noImplicitAny': true,  // 默认为 false，置为 true 时不会自动将未定义的类型转为 any，编译时检查更为严格
         'inlineSourceMap': true
     },
-    'files': [
-        'src/app.ts'
+    'includes': [
+        'src/*.ts'
     ]
 };
 
