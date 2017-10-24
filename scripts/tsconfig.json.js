@@ -10,7 +10,8 @@ const tsConfig = {
         'module': 'commonjs',
         'jsx': 'react',
         'noImplicitAny': true,  // 默认为 false，置为 true 时不会自动将未定义的类型转为 any，编译时检查更为严格
-        'inlineSourceMap': true
+        // 'inlineSourceMap': true,
+        'sourceMap': true
     },
     'includes': [
         'src/*.ts'

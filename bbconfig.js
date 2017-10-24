@@ -49,7 +49,7 @@ class BBConfig {
             test: /\.tsx?$/,
             loader: 'ts-loader'
         };
-        const tsEnforce
+        // const tsEnforce
         const webpackConfig = {
             module: {
                 rules: [tsRule]

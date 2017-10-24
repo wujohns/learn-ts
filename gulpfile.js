@@ -29,7 +29,7 @@ const baseLibsExternals = webpack2b.getExternals(baseLibsPackConfig);
 // 页面编译配置
 const pagesPackConfig = {
     pages: [
-        { name: 'index', src: ['./src/index.ts'] }
+        { name: 'index', src: ['./src/index.tsx'] }
     ],
     destDir: './dist/pages',
     externals: baseLibsExternals
@@ -43,7 +43,7 @@ gulp.task('libs', (callback) => {
     webpack2b.libsPack(baseLibsPackConfig, webpackConfig, callback);
 });
 
-// TODO ts 编译的 cache 可以考虑
+// TODO 解决 ts 编译时的缓存与less的module化支持
 gulp.task('pages', (callback) => {
     const webpackConfig = BBConfig.cusPages({
         uglify: false,
@@ -52,4 +52,4 @@ gulp.task('pages', (callback) => {
     webpack2b.pagesPack(pagesPackConfig, webpackConfig, callback);
 });
 
-gulp.taks('dev', ['libs', 'pages']);
+gulp.task('dev', ['libs', 'pages']);
