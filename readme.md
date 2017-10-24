@@ -22,6 +22,12 @@ ts
     +-index.tsx   测试页面的逻辑部分
 ```
 
+在该项目的根目录下：  
+执行 `make init` 即可生成 `package.json` 与 `tsconfig.json` 文件  
+执行 `make install` 即可完成依赖安装  
+在依赖安装与 `tsconfig.json` 执行 `gulp dev` 即可进行编译，亦可 `gulp libs` 或 `gulp pages` 单独对 libs 与 pages 进行编译  
+编译工作完成后打开 index.html 文件即可查看相应效果  
+
 ## ts 相关
 ### typescript 的安装
 由于需要对 .ts 或 .tsx 文件进行编译，所以需要预先在全局安装 `typescript`，执行  
