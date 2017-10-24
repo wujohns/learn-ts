@@ -2,3 +2,4 @@ dist/
 package.json
 tsconfig.json
 node_modules/
+.cache/

@@ -29,10 +29,12 @@ const packageConfig = {
         '@types/async': '^2.0.44',
         '@types/react': '^16.0.18',
         '@types/react-dom': '^16.0.2',
+        '@types/antd': '^1.0.0',
         'lodash': '^4.17.4',
         'async': '^2.5.0',
         'react': '^16.0.0',
-        'react-dom': '^16.0.0'
+        'react-dom': '^16.0.0',
+        'antd': '^2.12.0'
     },
 
     devDependencies: {
@@ -45,10 +47,10 @@ const packageConfig = {
         'ts-loader': '^3.0.3',
 
         // less 编译依赖的包（css）
-        'less': '^3.0.0-alpha.3',
+        'less': '^2.7.3',
         'style-loader': '^0.19.0',
         'css-loader': '^0.28.7',
-        'typings-for-css-modules-loader': '^1.7.0',
+        'typings-for-css-modules-loader': '^1.7.0',     // 在 css-loader 上做的封装，编译时自动生成 .d.ts
         'less-loader': '^4.0.5',
         'less-plugin-autoprefix': '^1.5.1',
         'extract-text-webpack-plugin': '^3.0.1',

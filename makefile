@@ -6,3 +6,6 @@ install:
 init:
 	node scripts/tsconfig.json.js
 	node scripts/package.json.js
+
+dev: init
+	gulp dev

@@ -20,7 +20,8 @@ const baseLibsPackConfig = {
         { src: 'lodash', expose: 'lodash' },
         { src: 'async', expose: 'async' },
         { src: 'react', expose: 'react' },
-        { src: 'react-dom', expose: 'react-dom' }
+        { src: 'react-dom', expose: 'react-dom' },
+        { src: './src/antd.js', expose: 'antd' }
     ],
     savePath: './dist/libs/base_libs.js'
 };
@@ -35,21 +36,34 @@ const pagesPackConfig = {
     externals: baseLibsExternals
 };
 
+// 基础包编译任务
 gulp.task('libs', (callback) => {
     const webpackConfig = BBConfig.baseLibs({
         uglify: false,
-        sourceMap: true
+        sourceMap: true,
+        cacheDir: 'libs'
     });
     webpack2b.libsPack(baseLibsPackConfig, webpackConfig, callback);
 });
 
-// TODO 解决 ts 编译时的缓存
+// 页面编译任务
 gulp.task('pages', (callback) => {
     const webpackConfig = BBConfig.cusPages({
         uglify: false,
-        sourceMap: true
+        sourceMap: true,
+        cacheDir: 'pages'
     });
     webpack2b.pagesPack(pagesPackConfig, webpackConfig, callback);
 });
 
 gulp.task('dev', ['libs', 'pages']);
+
+// 清理工程冗余文件
+gulp.task('del', (callback) => {
+    del([
+        'package.json', 'tsconfig.json',
+        '.cache', 'dist/libs/*', 'dist/pages/**'
+    ]).then(() => {
+        return callback();
+    });
+});

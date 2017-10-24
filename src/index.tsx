@@ -9,6 +9,7 @@ import * as _ from 'lodash';
 import * as async from 'async';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { Button } from 'antd';
 
 import * as style from './index.less';
 
@@ -23,7 +24,12 @@ class Test extends React.Component {
     }
 
     render () {
-        return (<div className={ style.content }>hahha</div>);
+        return (
+            <div>
+                <div className={ style.content }>hahha</div>
+                <Button>ddd</Button>
+            </div>
+        );
     }
 };
 
