@@ -48,11 +48,13 @@ const packageConfig = {
         'less': '^3.0.0-alpha.3',
         'style-loader': '^0.19.0',
         'css-loader': '^0.28.7',
+        'typings-for-css-modules-loader': '^1.7.0',
         'less-loader': '^4.0.5',
         'less-plugin-autoprefix': '^1.5.1',
         'extract-text-webpack-plugin': '^3.0.1',
 
-        // 其他loader（json、image）
+        // 其他loader（json、image等）
+        'cache-loader': '^1.1.0',
         'json-loader': '^0.5.7'
     }
 };

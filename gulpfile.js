@@ -43,7 +43,7 @@ gulp.task('libs', (callback) => {
     webpack2b.libsPack(baseLibsPackConfig, webpackConfig, callback);
 });
 
-// TODO 解决 ts 编译时的缓存与less的module化支持
+// TODO 解决 ts 编译时的缓存
 gulp.task('pages', (callback) => {
     const webpackConfig = BBConfig.cusPages({
         uglify: false,

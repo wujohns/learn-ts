@@ -8,6 +8,8 @@
 
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const lessPluginAutoPrefix = require('less-plugin-autoprefix');
 
 class BBConfig {
     /**
@@ -41,7 +43,7 @@ class BBConfig {
      * @returns {Object} - 相应的 webpack 配置
      */
     static cusPages (config) {
-        const plugins = [];
+        const plugins = [new ExtractTextPlugin('[name].css')];
         if (config.uglify) {
             plugins.push(new UglifyJsPlugin());
         }
@@ -49,10 +51,38 @@ class BBConfig {
             test: /\.tsx?$/,
             loader: 'ts-loader'
         };
-        // const tsEnforce
+        const lessRule = {
+            test: /\.less$/,
+            use: ExtractTextPlugin.extract({
+                fallback: 'style-loader',
+                use: [
+                    {
+                        loader: 'typings-for-css-modules-loader',
+                        options: {
+                            importLoaders: 1,
+                            modules: true,
+                            sourceMap: !!config.sourceMap,
+                            namedExport: true
+                        }
+                    },
+                    {
+                        loader: 'less-loader',
+                        options: {
+                            sourceMap: !!config.sourceMap,
+                            modifyVars: {
+                                site_static_host: ''
+                            },
+                            plugins: [
+                                new lessPluginAutoPrefix({ cascade: true, browsers: ["last 5 versions"] })
+                            ]
+                        }
+                    }
+                ]
+            })
+        };
         const webpackConfig = {
             module: {
-                rules: [tsRule]
+                rules: [tsRule, lessRule]
             },
             plugins: plugins
         };

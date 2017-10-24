@@ -10,6 +10,8 @@ import * as async from 'async';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
+import * as style from './index.less';
+
 const arr: string[] = [
     'aaa', 'bbb', 'ccc'
 ];
@@ -21,7 +23,7 @@ class Test extends React.Component {
     }
 
     render () {
-        return (<div>hahha</div>);
+        return (<div className={ style.content }>hahha</div>);
     }
 };
 

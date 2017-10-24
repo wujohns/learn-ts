@@ -3,8 +3,6 @@ install:
 	npm prune
 	npm install
 
-build:
+init:
 	node scripts/tsconfig.json.js
-
-run: build
-	node dist/app.js
+	node scripts/package.json.js
