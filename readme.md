@@ -57,7 +57,7 @@ ts
 `outDir` - 输出目录（配合webpack的ts-loader后这里并不生效）  
 `module` - 模块的标准，这里使用 commonjs 规范  
 `jsx` - 对 jsx 语法的支持  
-`allowSyntheticDefaultImports` - 在引入第三方包时默认会从 @types 引入相应的声明文件，但部分第三方已经在工程中支持了 typescript 特性，将该参数置为 true 时则在 import 时，会依据包里相应文件所在目录的 .d.ts 作为类型声明文件（比如原生支持ts的antd）
+`allowSyntheticDefaultImports` - 在引入第三方包时默认会从 @types 引入相应的声明文件，但部分第三方已经在工程中支持了 typescript 特性，将该参数置为 true 时则在 import 时，会依据包里相应文件所在目录的 .d.ts 作为类型声明文件（比如原生支持ts的antd）  
 `noImplicitAny` - 默认为 false，置为 true 则会在编译时在没有规定类型的地方报warning  
 `sourceMap` - 置为 true 后配合 webpack 中的 sourceMap 配置从而提供 sourceMap 特性支持
 
